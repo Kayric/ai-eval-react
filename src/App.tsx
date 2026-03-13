@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Cover } from "./pages/Cover";
 import { Definition } from "./pages/Definition";
@@ -15,7 +15,7 @@ import { Resources } from "./pages/Resources";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/ai-eval-react">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Cover />} />
@@ -34,7 +34,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
