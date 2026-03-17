@@ -49,13 +49,42 @@ export const Metrics = () => {
         </div>
       </div>
 
-      <div className="pt-8 border-t border-softgray">
+      <div className="pt-8 mb-16 border-t border-softgray">
         <h3 className="font-bold text-2xl mb-2">Finding the Right Balance</h3>
         <p className="text-primary/70 mb-8">
           Hover over the chart. We only use expensive methods (like AI Grading) for high-impact business needs.
         </p>
         
         <MetricChart />
+      </div>
+
+      <div className="bg-softgray/10 p-8 rounded-3xl border border-softgray">
+        <h3 className="font-bold text-2xl mb-6 flex items-center gap-3">
+          <Robot size={32} className="text-secondary" />
+          The LLM-as-a-Judge Rubric Library
+        </h3>
+        <p className="text-primary/70 mb-8 leading-relaxed">
+          When using an AI to grade another AI, you must give it a clear <strong>Rubric</strong>. Here are the four most common ones used in production:
+        </p>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white p-5 rounded-xl border border-softgray shadow-sm">
+            <strong className="text-secondary block mb-1">1. Correctness</strong>
+            <p className="text-sm text-primary/70">Does the response match the facts in our reference documentation? (Pass/Fail)</p>
+          </div>
+          <div className="bg-white p-5 rounded-xl border border-softgray shadow-sm">
+            <strong className="text-secondary block mb-1">2. Groundedness</strong>
+            <p className="text-sm text-primary/70">Did the AI only use the provided context, or did it "hallucinate" outside info?</p>
+          </div>
+          <div className="bg-white p-5 rounded-xl border border-softgray shadow-sm">
+            <strong className="text-secondary block mb-1">3. Tone & Style</strong>
+            <p className="text-sm text-primary/70">Was the response professional, concise, and aligned with our brand voice guidelines?</p>
+          </div>
+          <div className="bg-white p-5 rounded-xl border border-softgray shadow-sm">
+            <strong className="text-secondary block mb-1">4. Safety</strong>
+            <p className="text-sm text-primary/70">Did the response avoid discussing restricted topics (e.g., medical advice, competitors)?</p>
+          </div>
+        </div>
       </div>
     </div>
   );

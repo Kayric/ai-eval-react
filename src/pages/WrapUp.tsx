@@ -60,10 +60,17 @@ export const WrapUp = () => {
             </div>
           </div>
           <div className="flex items-start gap-6 group">
-            <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center font-bold text-secondary text-lg shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors">QA</div>
+            <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center font-bold text-secondary text-lg shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors">DATA</div>
             <div className="pt-1">
-              <strong className="block text-xl mb-1">Quality Assurance</strong>
-              <p className="text-primary/70 leading-relaxed">Review those 10 scenarios and find the edge cases (What if the user gets angry? What if data is missing?).</p>
+              <strong className="block text-xl mb-1">Data Team</strong>
+              <p className="text-primary/70 leading-relaxed">Establish the baseline reference dataset and define the initial automated metrics to measure output quality.</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-6 group">
+            <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center font-bold text-secondary text-lg shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors">UX/UI</div>
+            <div className="pt-1">
+              <strong className="block text-xl mb-1">Designers</strong>
+              <p className="text-primary/70 leading-relaxed">Review the top failure scenarios to design better fallbacks, safety warnings, and user feedback mechanisms.</p>
             </div>
           </div>
           <div className="flex items-start gap-6 group">
@@ -74,10 +81,10 @@ export const WrapUp = () => {
             </div>
           </div>
           <div className="flex items-start gap-6 group">
-            <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center font-bold text-secondary text-lg shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors">UX</div>
+            <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center font-bold text-secondary text-lg shrink-0 group-hover:bg-secondary group-hover:text-white transition-colors">QA</div>
             <div className="pt-1">
-              <strong className="block text-xl mb-1">Designers</strong>
-              <p className="text-primary/70 leading-relaxed">Review the top failure scenarios to design better fallbacks, safety warnings, and user feedback mechanisms.</p>
+              <strong className="block text-xl mb-1">Quality Assurance</strong>
+              <p className="text-primary/70 leading-relaxed">Review those 10 scenarios and find the edge cases (What if the user gets angry? What if data is missing?).</p>
             </div>
           </div>
         </div>

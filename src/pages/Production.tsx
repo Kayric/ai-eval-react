@@ -128,7 +128,7 @@ export const Production = () => {
         </div>
       </div>
 
-      <div className="pt-8 border-t border-softgray">
+      <div className="pt-8 mb-16 border-t border-softgray">
         <h3 className="font-bold text-2xl mb-10 text-center">Monitoring Strategy</h3>
         <div className="grid md:grid-cols-2 gap-12">
           <div className="text-center flex flex-col items-center">
@@ -146,6 +146,37 @@ export const Production = () => {
             <p className="text-primary/70 leading-relaxed max-w-sm">Batch analysis. Run AI judges overnight on sampled logs to spot trends and fix root causes.</p>
           </div>
         </div>
+      </div>
+
+      <div className="bg-primary text-white p-8 rounded-3xl relative overflow-hidden">
+        <div className="relative z-10">
+          <h3 className="text-2xl font-bold mb-4">Spotting the "Unknown Unknowns"</h3>
+          <p className="text-white/70 mb-8 leading-relaxed">
+            Your initial evaluation set only contains the failures you <em>expected</em>. But users are creative. You must actively look for new patterns:
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="flex gap-4">
+              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0 border border-white/20">
+                <ChatCircleDots size={24} className="text-accent" />
+              </div>
+              <div>
+                <strong className="block text-accent mb-1">Topic Clustering</strong>
+                <p className="text-sm text-white/60">Using AI to group 10,000 logs by intent. Are people asking about a "Thai Refund Policy" you forgot to document?</p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0 border border-white/20">
+                <ArrowsClockwise size={24} className="text-accent" />
+              </div>
+              <div>
+                <strong className="block text-accent mb-1">Feedback Flywheel</strong>
+                <p className="text-sm text-white/60">When you find a new production failure, add it to your <strong>Chapter 4 Dataset</strong> immediately. Never fail for the same reason twice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 blur-[100px] -mr-32 -mt-32 rounded-full"></div>
       </div>
     </div>
   );

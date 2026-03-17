@@ -1,4 +1,4 @@
-import { Briefcase, ShieldCheck, Code, PaintBrush, Quotes, CheckCircle, XCircle, ArrowRight } from "@phosphor-icons/react";
+import { Briefcase, ShieldCheck, Code, PaintBrush, ChartBar, Quotes, CheckCircle, XCircle, ArrowRight } from "@phosphor-icons/react";
 
 export const Definition = () => {
   return (
@@ -11,7 +11,7 @@ export const Definition = () => {
         </p>
       </header>
 
-      <div className="grid md:grid-cols-2 gap-x-12 gap-y-10 mb-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 mb-16">
         <div className="flex gap-4">
           <div className="w-12 h-12 rounded-full bg-softgray flex items-center justify-center text-secondary shrink-0">
             <Briefcase size={24} />
@@ -25,23 +25,12 @@ export const Definition = () => {
         </div>
         <div className="flex gap-4">
           <div className="w-12 h-12 rounded-full bg-softgray flex items-center justify-center text-secondary shrink-0">
-            <ShieldCheck size={24} />
+            <ChartBar size={24} />
           </div>
           <div>
-            <h4 className="font-bold text-lg">Quality Assurance</h4>
+            <h4 className="font-bold text-lg">Data Team</h4>
             <p className="text-sm text-primary/80 mt-2 leading-relaxed">
-              AI breaks traditional pass/fail testing. Your skills in finding edge cases are critical to building the grading rubrics.
-            </p>
-          </div>
-        </div>
-        <div className="flex gap-4">
-          <div className="w-12 h-12 rounded-full bg-softgray flex items-center justify-center text-secondary shrink-0">
-            <Code size={24} />
-          </div>
-          <div>
-            <h4 className="font-bold text-lg">Engineering</h4>
-            <p className="text-sm text-primary/80 mt-2 leading-relaxed">
-              Passing a unit test doesn't mean the AI works. You must implement automated metrics that measure real system behavior.
+              You provide the empirical foundation. You build the reference datasets and define the metrics (like LLM-as-a-judge) to measure quality.
             </p>
           </div>
         </div>
@@ -56,6 +45,30 @@ export const Definition = () => {
             </p>
           </div>
         </div>
+        
+        <div className="flex gap-4">
+          <div className="w-12 h-12 rounded-full bg-softgray flex items-center justify-center text-secondary shrink-0">
+            <Code size={24} />
+          </div>
+          <div>
+            <h4 className="font-bold text-lg">Engineering</h4>
+            <p className="text-sm text-primary/80 mt-2 leading-relaxed">
+              Passing a unit test doesn't mean the AI works. You must implement automated metrics that measure real system behavior.
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-4">
+          <div className="w-12 h-12 rounded-full bg-softgray flex items-center justify-center text-secondary shrink-0">
+            <ShieldCheck size={24} />
+          </div>
+          <div>
+            <h4 className="font-bold text-lg">Quality Assurance</h4>
+            <p className="text-sm text-primary/80 mt-2 leading-relaxed">
+              AI breaks traditional pass/fail testing. Your skills in finding edge cases are critical to building the grading rubrics.
+            </p>
+          </div>
+        </div>
+        
       </div>
 
       <div className="pt-8">

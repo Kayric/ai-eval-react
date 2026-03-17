@@ -56,7 +56,7 @@ export const Datasets = () => {
           </table>
         </div>
 
-        <div className="mt-8 mb-10 bg-secondary/5 p-6 rounded-2xl border border-secondary/20">
+        <div className="mt-8 mb-16 bg-secondary/5 p-6 rounded-2xl border border-secondary/20">
           <h4 className="font-bold text-lg flex items-center gap-2 mb-2">
             <Ruler size={24} className="text-secondary" /> 
             What exactly is a "Metric" here?
@@ -64,6 +64,29 @@ export const Datasets = () => {
           <p className="text-primary/80 leading-relaxed">
             A metric is simply a <strong>quantifiable rule</strong> we create to check if our "What could go wrong?" fear actually happened. We don't track metrics just for fun; we track them to catch specific failures. Once we define the metric (e.g., "Escalation Accuracy"), we have to figure out <em>how</em> to measure it.
           </p>
+        </div>
+
+        <h3 className="font-bold text-2xl mb-8 text-center">The Reference Dataset Lifecycle</h3>
+        <div className="grid md:grid-cols-3 gap-6 mb-16 relative">
+          <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-softgray -z-10"></div>
+          
+          <div className="bg-white p-6 rounded-2xl border border-softgray shadow-sm text-center">
+            <div className="w-10 h-10 bg-softgray rounded-full flex items-center justify-center mx-auto mb-4 font-bold">1</div>
+            <h4 className="font-bold mb-2">Golden Set</h4>
+            <p className="text-xs text-primary/70">10-20 "Must-Pass" scenarios hand-picked by the PM and QA.</p>
+          </div>
+          
+          <div className="bg-white p-6 rounded-2xl border border-secondary shadow-md text-center scale-105">
+            <div className="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">2</div>
+            <h4 className="font-bold mb-2">Regression Set</h4>
+            <p className="text-xs text-primary/70">50-100 examples including edge cases found during development.</p>
+          </div>
+          
+          <div className="bg-white p-6 rounded-2xl border border-softgray shadow-sm text-center">
+            <div className="w-10 h-10 bg-softgray rounded-full flex items-center justify-center mx-auto mb-4 font-bold">3</div>
+            <h4 className="font-bold mb-2">Production Flywheel</h4>
+            <p className="text-xs text-primary/70">Continuous influx of real-world failures turned into tests.</p>
+          </div>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8">
