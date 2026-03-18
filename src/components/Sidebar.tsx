@@ -20,17 +20,17 @@ export const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       <aside 
         className={`
           transform transition-transform duration-300 fixed md:relative z-40 
-          w-64 h-full bg-softgray/20 text-primary flex flex-col border-r border-softgray 
+          w-64 h-full bg-bg-white text-primary flex flex-col border-r border-softgray 
           pt-16 md:pt-0
           ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
         `}
       >
         <div className="p-6 border-b border-softgray hidden md:block">
-          <h1 className="font-bold text-xl text-primary">
+          <h1 className="font-bold text-xl text-primary font-serif">
             AI Evals <br />
             <span className="text-secondary">For Everyone</span>
           </h1>
-          <p className="text-xs text-primary/70 mt-1">Interactive Knowledge Sharing</p>
+          <p className="text-xs text-primary/70 mt-1 font-sans">Interactive Knowledge Sharing</p>
         </div>
         
         <nav className="flex-1 overflow-y-auto py-4">
@@ -40,10 +40,10 @@ export const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
               to={chapter.path}
               onClick={onClose} // Close sidebar on mobile selection
               className={({ isActive }) => `
-                flex items-center gap-3 px-6 py-3 transition-colors text-sm font-medium
+                flex items-center gap-3 px-6 py-3 transition-colors text-sm font-medium font-sans
                 ${isActive 
                   ? 'bg-secondary/10 text-secondary border-r-4 border-secondary' 
-                  : 'text-primary/70 hover:bg-softgray/50 hover:text-primary'}
+                  : 'text-primary/70 hover:bg-bg-light hover:text-primary'}
               `}
             >
               <chapter.icon size={20} weight={chapter.id === 'cover' ? "fill" : "regular"} />
@@ -52,14 +52,14 @@ export const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
           ))}
         </nav>
 
-        <div className="p-4 border-t border-softgray bg-white">
+        <div className="p-4 border-t border-softgray bg-bg-light">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold">
               SPS
             </div>
             <div className="flex-1">
-              <p className="text-sm text-primary font-bold">Your Progress</p>
-              <div className="w-full bg-softgray rounded-full h-1.5 mt-1">
+              <p className="text-sm text-primary font-bold font-sans">Your Progress</p>
+              <div className="w-full bg-bg-white rounded-full h-1.5 mt-1">
                 <div 
                   className="bg-secondary h-1.5 rounded-full transition-all duration-300" 
                   style={{ width: `${progress}%` }}
