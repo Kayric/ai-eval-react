@@ -6,12 +6,6 @@ import { List } from "@phosphor-icons/react";
 export const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Scroll to top on route change
-  // Note: Usually better in a separate ScrollToTop component, but simple here
-  /* useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]); */
-
   return (
     <div className="flex h-screen overflow-hidden bg-bg">
       {/* Mobile Header */}

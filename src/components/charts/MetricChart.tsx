@@ -4,11 +4,19 @@ import {
   PointElement,
   Tooltip,
   Legend,
-  type ChartOptions
+  type ChartOptions,
+  type ScriptableContext
 } from 'chart.js';
 import { Scatter } from 'react-chartjs-2';
 
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
+
+interface DataPoint {
+  x: number;
+  y: number;
+  label: string;
+  type: string;
+}
 
 export const MetricChart = () => {
   const data = {
@@ -27,9 +35,9 @@ export const MetricChart = () => {
           { x: 3, y: 3, label: 'Word Count', type: 'Nice to Have' },
           
           { x: 8, y: 2, label: 'Complex Unused Score', type: 'Avoid' }
-        ],
-        backgroundColor: (context: any) => {
-          const val = context.raw;
+        ] as DataPoint[],
+        backgroundColor: (context: ScriptableContext<'scatter'>) => {
+          const val = context.raw as DataPoint;
           if (!val) return '#DCE3ED';
           if (val.label === 'Safety Filter') return '#11d399'; // Green accent
           if (val.label === 'AI Grading AI (LLM Judge)') return '#006fff'; // Blue accent
@@ -50,8 +58,9 @@ export const MetricChart = () => {
         titleColor: '#ffffff',
         bodyColor: '#ffffff',
         callbacks: {
-          label: function(context: any) {
-            return `${context.raw.label} (${context.raw.type})`;
+          label: function(context) {
+            const raw = context.raw as DataPoint;
+            return `${raw.label} (${raw.type})`;
           }
         }
       },

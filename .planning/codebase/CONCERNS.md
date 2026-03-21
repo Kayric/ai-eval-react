@@ -4,8 +4,9 @@ This document outlines potential technical debt, security gaps, and areas for im
 
 ## Technical Debt
 - **Missing Automated Tests**: The lack of unit, integration, and E2E tests increases the risk of regressions as the app grows.
-- **Static Content Scalability**: While the current data-driven approach is clean, if the content grows significantly, the main bundle size may increase. Consider code-splitting/lazy loading for pages.
-- **Scrolling Logic**: `Layout.tsx` contains a commented-out `useEffect` for scrolling to top. A robust `ScrollToTop` component should be implemented to ensure a good UX during navigation.
+- **Static Content Scalability**: [DONE] Implemented code-splitting/lazy loading for pages in `App.tsx` to optimize bundle size and scalability.
+- **Scrolling Logic**: [DONE] Implemented a robust `ScrollToTop` component used in `App.tsx` to ensure a good UX during navigation.
+- **Render Optimization**: [DONE] Fixed `set-state-in-effect` anti-pattern in `Production.tsx` to avoid unnecessary renders.
 
 ## Security
 - **Static Deployment**: Being a static site, there is no server-side logic, which reduces the attack surface. However, ensure that no sensitive information is accidentally committed to the repository.

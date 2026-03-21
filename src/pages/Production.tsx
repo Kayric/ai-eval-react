@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { ChatCircleDots, ShieldCheck, ArrowsClockwise } from "@phosphor-icons/react";
 
 interface Log {
@@ -23,10 +23,9 @@ const allLogs: Log[] = [
 export const Production = () => {
   const [filterEscalation, setFilterEscalation] = useState(false);
   const [filterBehavior, setFilterBehavior] = useState(false);
-  const [visibleLogs, setVisibleLogs] = useState<Log[]>(allLogs);
 
-  useEffect(() => {
-    const filtered = allLogs.filter(log => {
+  const visibleLogs = useMemo(() => {
+    return allLogs.filter(log => {
       if (log.type === 'normal' && !filterEscalation && !filterBehavior) return true;
       if (log.type === 'escalation' && filterEscalation) return true;
       if (log.type === 'behavior' && filterBehavior) return true;
@@ -34,7 +33,6 @@ export const Production = () => {
       if ((filterEscalation || filterBehavior) && log.type === 'normal') return false;
       return false;
     });
-    setVisibleLogs(filtered);
   }, [filterEscalation, filterBehavior]);
 
   const getLogCount = () => {
