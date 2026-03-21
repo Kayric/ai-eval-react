@@ -13,7 +13,7 @@ This document outlines potential technical debt, security gaps, and areas for im
 - **Dependencies**: Regular audits of dependencies (using `npm audit`) are recommended to avoid vulnerabilities in third-party libraries.
 
 ## Performance & SEO
-- **SEO for SPA**: SPAs hosted on GitHub Pages can face SEO challenges. Implementing a pre-rendering solution or server-side rendering (SSR) could be considered if search engine visibility becomes a priority.
+- **SEO for SPA**: [DONE] Enhanced `index.html` with OG and Twitter meta tags, and implemented a dynamic `SEO` component in `App.tsx` to update page titles. Added `robots.txt` and `sitemap.xml` for search engine indexing.
 - **Bundle Size**: Chart.js and Framer Motion are powerful but relatively large. Monitor bundle size to ensure fast load times on mobile devices.
 
 ## Gaps

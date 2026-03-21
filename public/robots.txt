@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://7PeaksSoftware.github.io/ai-eval-react/sitemap.xml

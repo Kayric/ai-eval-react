@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import { SEO } from "./components/SEO";
 
 // Lazy-loaded pages for optimized bundle size
 const Cover = lazy(() => import("./pages/Cover").then(module => ({ default: module.Cover })));
@@ -35,6 +36,7 @@ function App() {
   return (
     <BrowserRouter basename="/ai-eval-react">
       <ScrollToTop />
+      <SEO />
       <ErrorBoundary>
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
