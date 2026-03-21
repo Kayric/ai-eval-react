@@ -38,9 +38,10 @@ export const MetricChart = () => {
         backgroundColor: (context: any) => {
           const val = context.raw as DataPoint;
           if (!val) return '#DCE3ED';
-          if (val.label === 'Safety Filter') return '#11d399'; // Green accent
-          if (val.label === 'AI Grading AI (LLM Judge)') return '#006fff'; // Blue accent
-          return '#DCE3ED'; // Soft gray
+          if (val.type === 'Must Have') return '#11D399'; // Accent Green
+          if (val.type === 'Strategic') return '#006FFF'; // Secondary Blue
+          if (val.type === 'Nice to Have') return '#FCB710'; // Accent Yellow
+          return '#F92155'; // Accent Pink (Avoid)
         },
         pointRadius: 8,
         pointHoverRadius: 10
@@ -53,9 +54,11 @@ export const MetricChart = () => {
     maintainAspectRatio: false,
     plugins: {
       tooltip: {
-        backgroundColor: '#0d2c54',
-        titleColor: '#ffffff',
-        bodyColor: '#ffffff',
+        backgroundColor: '#0D2C54', // Primary
+        titleColor: '#FFFFFF',
+        bodyColor: '#FFFFFF',
+        titleFont: { family: 'Lora' },
+        bodyFont: { family: 'Source Sans 3' },
         callbacks: {
           label: function(context) {
             const raw = context.raw as DataPoint;
@@ -67,12 +70,20 @@ export const MetricChart = () => {
     },
     scales: {
       x: {
-        title: { display: true, text: 'Cost (Compute/$$$)', font: { weight: 'bold' } },
+        title: { 
+          display: true, 
+          text: 'Cost (Compute/$$$)', 
+          font: { weight: 'bold', family: 'Source Sans 3' } 
+        },
         min: 0, max: 10,
         grid: { color: '#DCE3ED' }
       },
       y: {
-        title: { display: true, text: 'Business Impact', font: { weight: 'bold' } },
+        title: { 
+          display: true, 
+          text: 'Business Impact', 
+          font: { weight: 'bold', family: 'Source Sans 3' } 
+        },
         min: 0, max: 10,
         grid: { color: '#DCE3ED' }
       }
