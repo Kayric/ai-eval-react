@@ -15,6 +15,7 @@ This project represents a complete architectural overhaul of the original "AI Ev
 | **Styling** | Tailwind CDN (Runtime) | **Tailwind CSS v4 (Build-time)** |
 | **Icons** | Web Component CDNs | **@phosphor-icons/react** |
 | **Charts** | Global Window Chart.js | **react-chartjs-2 (Declarative)** |
+| **Workflow** | Manual Refactoring | **GSD-Powered Automation** |
 | **Deployment** | Static Hosting | **Automated GitHub Actions CI/CD** |
 
 ## 🛠️ Key Features
@@ -34,6 +35,13 @@ Leveraged the latest **Tailwind CSS v4** engine, utilizing the `@tailwindcss/vit
 
 ### 3. Declarative Interactivity
 Ported legacy imperative DOM manipulation (e.g., `document.getElementById().innerText = ...`) into declarative React components, ensuring high-performance updates and type-safe event handling.
+
+## ⚡ GSD-Powered Refinement
+This project was systematically refined and optimized using the **Gemini CLI (Get-Shit-Done workflow)**. The GSD framework was employed to:
+- **Codebase Mapping:** Automated generation of structured architectural and technical stack documentation in `.planning/codebase/`.
+- **Performance Optimization:** Surgical implementation of `React.lazy`, `Suspense`, and route-based code-splitting.
+- **Robustness Engineering:** Integration of global `ErrorBoundary` components and standardized loading state protocols.
+- **Infrastructure & SEO:** Automated deployment of `sitemap.xml`, `robots.txt`, and OpenGraph metadata orchestration.
 
 ## 🏁 Getting Started
 
