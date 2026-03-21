@@ -17,5 +17,5 @@ This document outlines potential technical debt, security gaps, and areas for im
 - **Bundle Size**: Chart.js and Framer Motion are powerful but relatively large. Monitor bundle size to ensure fast load times on mobile devices.
 
 ## Gaps
-- **Error Boundaries**: The application lacks React Error Boundaries to handle runtime errors gracefully.
-- **Loading States**: If the app transition to fetching data from an API, standardized loading states will be necessary.
+- **Error Boundaries**: [DONE] Implemented a global `ErrorBoundary` component in `App.tsx` to handle runtime errors gracefully.
+- **Loading States**: [DONE] Standardized loading states using a refined `LoadingFallback` and `Suspense` in `App.tsx`.

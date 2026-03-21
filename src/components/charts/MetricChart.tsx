@@ -4,8 +4,7 @@ import {
   PointElement,
   Tooltip,
   Legend,
-  type ChartOptions,
-  type ScriptableContext
+  type ChartOptions
 } from 'chart.js';
 import { Scatter } from 'react-chartjs-2';
 
@@ -36,7 +35,7 @@ export const MetricChart = () => {
           
           { x: 8, y: 2, label: 'Complex Unused Score', type: 'Avoid' }
         ] as DataPoint[],
-        backgroundColor: (context: ScriptableContext<'scatter'>) => {
+        backgroundColor: (context: any) => {
           const val = context.raw as DataPoint;
           if (!val) return '#DCE3ED';
           if (val.label === 'Safety Filter') return '#11d399'; // Green accent
